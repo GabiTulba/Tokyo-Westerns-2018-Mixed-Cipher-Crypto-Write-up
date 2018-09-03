@@ -274,8 +274,10 @@ print "Hah! I got your flag!!\n\n",x[x.find("TWCTF{"):],"\n\nThey hatin\'\n"
 
 ## Finding the flag:
 <br>
-After waiting a few minutes we get the flag: <br>
+After waiting a few minutes we get the flag: <br><br>
+
 ```
+
 They see me rollin'...
 
 Hah! I got your N.
