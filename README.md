@@ -1,15 +1,15 @@
 # mixed cipher (233 points/ 39 solves)
 ## Problem statement:
->I heard bulldozer is on this channel, be careful!
->nc crypto.chal.ctf.westerns.tokyo 5643
->[server.py]()
+>I heard bulldozer is on this channel, be careful! <br>
+>nc crypto.chal.ctf.westerns.tokyo 5643 <br>
+>[server.py](https://github.com/GabiTulba/Tokyo-Westerns-2018-Mixed-Cipher-Crypto-Write-up/blob/master/server.py)
 <br><br>
 
 ## My opinion:
 This problem is at the moment my favourite RSA problem, I had a lot of fun solving it and I learned a new RSA attack and found a tool for breaking python's random. <br><br>
 
 ## The problem:
-We are given a python script and a port where it runs:
+We are given a python script and a port where it runs: <br>
 ```python
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import AES
@@ -95,7 +95,7 @@ I heard bulldozer is on this channel, be careful!
         exit()
     menu[n]()
 ```
-<be>
+<br>
 It's a lot of code to digest so let's start:
 
 We have 4 options, `encrypt` which is an encryption oracle for both [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) and [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), `decrypt` which is a decryption oracle for RSA, but we only get the last byte, `get encrypted flag` which returns the flag encrypted with AES but we won't get the IV and finally `get encrypted key` which returns the AES key, encrypted with RSA.
@@ -116,7 +116,7 @@ So to solve the problem step by step:
 Total number of queries: ~280 which suffices the time constraint. <br>
 ## The code:
 
-The following code is the exploit described above:
+The following code is the exploit described above: <br>
 ```python
 from Crypto.Cipher import AES
 from Crypto.Util.number import long_to_bytes
@@ -274,7 +274,7 @@ print "Hah! I got your flag!!\n\n",x[x.find("TWCTF{"):],"\n\nThey hatin\'\n"
 
 ## Finding the flag:
 <br>
-After waiting a few minutes we get the flag:
+After waiting a few minutes we get the flag: <br>
 ```
 They see me rollin'...
 
